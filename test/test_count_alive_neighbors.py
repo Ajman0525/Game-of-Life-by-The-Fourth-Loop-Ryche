@@ -1,67 +1,17 @@
 import pytest
 from src.count_alive_neighbors import count_alive_neighbors
 
-# --- Fixtures ---
-
-@pytest.fixture
-def small_grid():
-    """A simple 2x2 grid."""
-    return [
-        [0, 1],
-        [1, 0]
-    ]
-
-@pytest.fixture
-def medium_grid():
-    """A 3x3 grid with mixed alive/dead cells."""
-    return [
+def test_center_cell_in_3x3_grid_with_two_neighbors():
+    """
+    The center cell (1,1) has two live neighbors:
+    one above and one to the left.
+    """
+    grid = [
         [0, 1, 0],
         [1, 1, 0],
         [0, 0, 0]
     ]
-
-@pytest.fixture
-def cross_grid():
-    """A 3x3 grid with a cross pattern (4 neighbors around the center)."""
-    return [
-        [0, 1, 0],
-        [1, 0, 1],
-        [0, 1, 0]
-    ]
-
-@pytest.fixture
-def empty_grid():
-    """An empty grid (no cells)."""
-    return []
-
-@pytest.fixture
-def single_cell_grid():
-    """A 1x1 grid with one alive cell."""
-    return [[1]]
-
-@pytest.fixture
-def full_alive_grid():
-    """A 3x3 grid with all cells alive."""
-    return [
-        [1, 1, 1],
-        [1, 1, 1],
-        [1, 1, 1]
-    ]
-
-@pytest.fixture
-def full_dead_grid():
-    """A 3x3 grid with all cells dead."""
-    return [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-    ]
-
-# --- Tests for general behavior ---
-
-def test_center_cell_in_medium_grid(medium_grid):
-    """Center cell should have 2 alive neighbors."""
-    assert count_alive_neighbors(medium_grid, 1, 1) == 2
+    assert count_alive_neighbors(grid, 1, 1) == 2
 
 def test_corner_cell_in_small_grid(small_grid):
     """Top-left corner in 2x2 grid should have 2 alive neighbors."""
