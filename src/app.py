@@ -1,5 +1,6 @@
 from display import display_grid
 from grid_init import Grid
+from next_generation import next_generation
 
 def get_grid_size():
     while True:
@@ -67,7 +68,8 @@ def main():
         
         if choice == '1':
             # Show next generation
-            pass
+            current_grid = next_generation(current_grid)
+            
         elif choice == '2':
             # Run multiple generations
             pass
