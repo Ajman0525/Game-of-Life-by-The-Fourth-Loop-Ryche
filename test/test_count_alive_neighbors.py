@@ -13,9 +13,16 @@ def test_center_cell_in_3x3_grid_with_two_neighbors():
     ]
     assert count_alive_neighbors(grid, 1, 1) == 2
 
-def test_corner_cell_in_small_grid(small_grid):
-    """Top-left corner in 2x2 grid should have 2 alive neighbors."""
-    assert count_alive_neighbors(small_grid, 0, 0) == 2
+def test_corner_cell_in_2x2_grid_with_two_neighbors():
+    """
+    Top-left corner (0,0) in a 2x2 grid with 2 neighbors:
+    cell (0,1) and cell (1,0) are alive.
+    """
+    grid = [
+        [0, 1],
+        [1, 0]
+    ]
+    assert count_alive_neighbors(grid, 0, 0) == 2
 
 def test_edge_cell_in_cross_grid(cross_grid):
     """Middle-left edge in cross grid should have 2 alive neighbors."""
