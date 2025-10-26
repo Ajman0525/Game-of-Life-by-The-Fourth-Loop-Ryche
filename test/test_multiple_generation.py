@@ -1,4 +1,4 @@
-from src.generation import next_generation
+from src.next_generation import next_generation
 from src.multiple_generation import multiple_generation  # you will implement this
 
 def test_zero_generation():
