@@ -24,13 +24,30 @@ def test_corner_cell_in_2x2_grid_with_two_neighbors():
     ]
     assert count_alive_neighbors(grid, 0, 0) == 2
 
-def test_edge_cell_in_cross_grid(cross_grid):
-    """Middle-left edge in cross grid should have 2 alive neighbors."""
-    assert count_alive_neighbors(cross_grid, 1, 0) == 2
+def test_edge_cell_in_cross_pattern_has_two_neighbors():
+    """
+    Middle-left edge (1,0) in a cross pattern has two alive neighbors:
+    one above (0,1) and one below (2,1).
+    """
+    grid = [
+        [0, 1, 0],
+        [1, 0, 1],
+        [0, 1, 0]
+    ]
+    assert count_alive_neighbors(grid, 1, 0) == 2
 
-def test_center_cell_in_cross_grid(cross_grid):
-    """Center cell in cross grid should have 4 alive neighbors."""
-    assert count_alive_neighbors(cross_grid, 1, 1) == 4
+
+def test_center_cell_in_cross_pattern_has_four_neighbors():
+    """
+    The center cell (1,1) has four alive neighbors
+    arranged in a cross shape.
+    """
+    grid = [
+        [0, 1, 0],
+        [1, 0, 1],
+        [0, 1, 0]
+    ]
+    assert count_alive_neighbors(grid, 1, 1) == 4
 
 def test_out_of_bounds_returns_zero(small_grid):
     """Coordinates outside the grid should safely return 0."""
