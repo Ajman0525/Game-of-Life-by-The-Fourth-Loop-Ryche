@@ -49,9 +49,16 @@ def test_center_cell_in_cross_pattern_has_four_neighbors():
     ]
     assert count_alive_neighbors(grid, 1, 1) == 4
 
-def test_out_of_bounds_returns_zero(small_grid):
-    """Coordinates outside the grid should safely return 0."""
-    assert count_alive_neighbors(small_grid, 3, 4) == 0
+def test_out_of_bounds_returns_zero():
+    """
+    If the coordinates are outside the grid boundaries,
+    function should return 0 safely.
+    """
+    grid = [
+        [0, 1],
+        [1, 0]
+    ]
+    assert count_alive_neighbors(grid, 3, 4) == 0
 
 # --- Edge case tests ---
 
