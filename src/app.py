@@ -40,6 +40,15 @@ def create_initial_grid(rows, cols, input_func=input):
     
     return grid
 
+
+def display_menu():
+    print("\nOptions:")
+    print("1. Next generation")
+    print("2. Run multiple generations")
+    print("3. Reset grid")
+    print("4. Exit")
+    return input("Choose an option (1-4): ")
+
 def main():
     print("Welcome to Conway's Game of Life!")
     
@@ -50,6 +59,34 @@ def main():
     initial_grid = create_initial_grid(rows, cols)
     current_grid = initial_grid
     
+    while True:
+        print("\nCurrent grid:")
+        print(display_grid(current_grid))
+        
+        choice = display_menu()
+        
+        if choice == '1':
+            # Show next generation
+            pass
+        elif choice == '2':
+            # Run multiple generations
+            pass
+        elif choice == '3':
+            # Reset grid
+            current_grid = create_initial_grid(rows, cols)
+        
+        elif choice == '4':
+            #Exit Game
+            print("Thanks for playing!")
+            break
+        
+        else:
+            print("Invalid option. Please choose 1-4")
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
