@@ -11,11 +11,18 @@ def get_grid_size():
         except ValueError:
             print("Please enter valid numbers")
             
+def create_initial_grid(rows, cols):
+    pass
+
 def main():
     print("Welcome to Conway's Game of Life!")
     
     # Get grid size from user
     rows, cols = get_grid_size()
+    
+    # Get initial grid configuration
+    initial_grid = create_initial_grid(rows, cols)
+    current_grid = initial_grid
     
 
 if __name__ == "__main__":
