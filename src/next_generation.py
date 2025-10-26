@@ -1,3 +1,5 @@
+from count_alive_neighbors import count_alive_neighbors
+
 def next_generation(grid):
     """
     Compute the next state of the grid according to Conway's Game of Life rules.
@@ -16,7 +18,7 @@ def next_generation(grid):
 
     for r in range(rows):
         for c in range(cols):
-            alive_neighbors = count_alive_neighbors(r, c, rows, cols, grid)
+            alive_neighbors = count_alive_neighbors(grid, r, c,)
             if grid[r][c] == 1:
                 # Apply rules for live cells
                 if alive_neighbors < 2:       # Underpopulation
@@ -31,17 +33,3 @@ def next_generation(grid):
                     new_grid[r][c] = 1
 
     return new_grid
-
-def count_alive_neighbors(r, c, rows, cols, grid):
-    """Count alive neighbors around (r, c)."""
-    directions = [
-        (-1, -1), (-1, 0), (-1, 1),
-        (0, -1),          (0, 1),
-        (1, -1),  (1, 0), (1, 1)
-    ]
-    count = 0
-    for dr, dc in directions:
-        nr, nc = r + dr, c + dc
-        if 0 <= nr < rows and 0 <= nc < cols:
-            count += grid[nr][nc]
-    return count

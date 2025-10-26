@@ -1,5 +1,5 @@
 import copy
-from src.generation import next_generation
+from src.next_generation import next_generation
 
 def test_underpopulation():
     grid = [

@@ -1,5 +1,5 @@
 from src.display import display_grid
-from src.generation import next_generation
+from src.next_generation import next_generation
 
 
 def test_dead_cells_display_default_grid():
