@@ -1,6 +1,8 @@
 from display import display_grid
 from grid_init import Grid
 from next_generation import next_generation
+from multiple_generation import multiple_generation
+import time
 
 def get_grid_size():
     while True:
@@ -72,7 +74,18 @@ def main():
             
         elif choice == '2':
             # Run multiple generations
-            pass
+            try:
+                gens = int(input("How many generations? "))
+                if gens > 0:
+                    for gen in range(gens):
+                        current_grid = multiple_generation(current_grid, 1)
+                        print("\033[H\033[J")  # Clear screen
+                        print(f"Generation {gen + 1}:")
+                        print(display_grid(current_grid))
+                        time.sleep(0.5)
+            except ValueError:
+                print("Please enter a valid number")
+        
         elif choice == '3':
             # Reset grid
             current_grid = create_initial_grid(rows, cols)

@@ -1,4 +1,4 @@
-from generation import next_generation
+from next_generation import next_generation
 
 def multiple_generation(initial_grid, total_generations):
     """
