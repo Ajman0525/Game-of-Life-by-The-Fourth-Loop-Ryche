@@ -1,4 +1,4 @@
-from src.grid_init import Grid
+from grid_init import Grid
 
 
 def display_grid(grid):
