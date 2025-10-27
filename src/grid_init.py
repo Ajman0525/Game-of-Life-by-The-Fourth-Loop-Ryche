@@ -12,10 +12,3 @@ class Grid:
     def get_grid(self):
         return self.data
 
-
-if __name__ == "__main__":
-    grid = Grid()
-    print(f"Grid ({grid.rows}x{grid.cols}):")
-    for row in grid.get_grid():
-        print(row)
-
