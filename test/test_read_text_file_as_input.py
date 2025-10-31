@@ -1,4 +1,5 @@
+from src.read_text import File
 def test_read_text_file_as_input():
-    read = text_file()
+    read = File()
 
-    assert read.input() == "read"
+    assert read.input() == "read"   
