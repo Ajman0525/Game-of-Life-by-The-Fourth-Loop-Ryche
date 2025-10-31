@@ -2,7 +2,7 @@
 
 **Forked from:** [The-Fourth-Loop-Ryche-PCCS-Team](https://github.com/Operator-Syn/The-Fourth-Loop-Ryche-PCCS)  
 **Original Authors:** The Fourth Loop – Ryche PCCS Team  
-**Fork by:** Big O Team
+**Fork by:** [Big O Team](https://github.com/Ajman0525/Conways-Game-of-Life)
 
 > This fork was created to explore and modify the original implementation of **Conway’s Game of Life**, focusing on extending functionality and experimenting with different design approaches — while preserving credit to the original authors.  
 >  
