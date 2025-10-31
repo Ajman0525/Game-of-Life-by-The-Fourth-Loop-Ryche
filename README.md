@@ -1,34 +1,47 @@
-# 🧩 Test-Driven Development Practice
+# 🧩 Conway's Game of Life — Modified Fork
 
-This repository is dedicated to exploring **Test-Driven Development (TDD)** using **various Programming Languages**.  
+**Forked from:** [The-Fourth-Loop-Ryche-PCCS-Team](https://github.com/Operator-Syn/The-Fourth-Loop-Ryche-PCCS)  
+**Original Authors:** The Fourth Loop – Ryche PCCS Team  
+**Fork by:** Big O Team
 
-> Made using Python
+> This fork was created to explore and modify the original implementation of **Conway’s Game of Life**, focusing on extending functionality and experimenting with different design approaches — while preserving credit to the original authors.  
+>  
+> Additionally, this fork introduces **new features and enhancements** developed for participation in a **programming competition**.
 
 ---
 
-### 🔁 Development Approach  
-The project follows the **Red → Green → Refactor** cycle:  
+### 🔁 Development Approach
+
+This project continues to follow the **Test-Driven Development (TDD)** cycle inspired by the original repository:
+
 1. 🟥 **Red** — Write a failing test that defines the expected behavior.  
 2. 🟩 **Green** — Implement just enough code to make the test pass.  
-3. 🧹 **Refactor** — Improve the code while keeping all tests green.  
+3. 🧹 **Refactor** — Improve the code while keeping all tests green.
 
-Commits may captures a step in this cycle, showing the Iterative and Disciplined Nature of Test-First Programming.
+Each commit represents progress through these stages, highlighting the disciplined nature of TDD.
 
 ---
 
-### 🎯 Objective  
-Our goal is to develop a **deeper understanding of TDD principles** and strengthen **development discipline** through consistent, incremental, and test-driven design.
+### 🎯 Objective
 
+This fork aims to **modify and expand** the original project while maintaining the TDD philosophy.  
+Specifically, it seeks to:
+
+- Enhance understanding of **Test-Driven Development principles**
+- Introduce new features or improvements
+- Preserve clear documentation and testing discipline
+
+---
 
 ### 🚀 Getting Started (Onboarding)
 
 Follow these steps to set up your local environment:
 
-1. **Clone the repository**
+1. **Clone this fork**
    ```bash
-   git clone https://github.com/Operator-Syn/The-Fourth-Loop-Ryche-PCCS.git
-   cd The-Fourth-Loop-Ryche-PCCS
-   ```
+   git clone https://github.com/Ajman0525/Game-of-Life-by-The-Fourth-Loop-Ryche.git
+   cd Game-of-Life-by-The-Fourth-Loop-Ryche
+
 2. **Install pipenv if not installed**
     ```bash
     pip install pipenv
@@ -45,4 +58,3 @@ Follow these steps to set up your local environment:
     ```
     pytest -v
     ```
-This setup ensures each contributor works in an isolated, consistent environment aligned with the project’s TDD workflow.
