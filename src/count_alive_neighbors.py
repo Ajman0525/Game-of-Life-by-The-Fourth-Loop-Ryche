@@ -6,37 +6,6 @@ NEIGHBOR_OFFSETS = [
     (-1, 1),  (0, 1),  (1, 1)     
 ]
 
-def is_in_bounds(grid, row, col):
-    """
-    Check if a given cell (row, col) is inside the grid boundaries.
-    """
-    if row < 0: # Row index is negative → above the top of the grid → out of bounds
-        return False
-    else:
-        if row >= len(grid): # Row index beyond last row → below the grid → out of bounds
-            return False
-        else:
-            if col < 0: # Column index is negative → left of the grid → out of bounds
-                return False
-            else:
-                if col >= len(grid[0]): # Column index beyond last column → right of the grid → out of bounds
-                    return False
-                else:
-                    return True # Row and column are within valid ranges → in bounds
-
-def is_alive(grid, row, col):
-    """
-    Check if a given cell (row, col) is alive.
-    Returns False if the cell is out of bounds.
-    """
-    if is_in_bounds(grid, row, col):
-        if grid[row][col] == 1:
-            return True
-        else:
-            return False
-    else:
-        return False
-
 def count_alive_neighbors(grid, target_row, target_col):
     """
     Count the number of alive (1) neighboring cells around a given cell in a 2D grid.
