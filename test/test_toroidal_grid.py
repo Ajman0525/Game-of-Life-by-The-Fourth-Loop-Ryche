@@ -9,12 +9,7 @@ def test_world_wrapping_from_start_to_end():
     assert connect.world_wrap(current_coordinate, change_in_coordinate, is_x_axis=True) == 9
 
 def test_find_all_neighbors_at_top_left_corner():
-    NEIGHBOR_OFFSETS = [
-        (-1, -1),(0, -1),(1, -1), 
-        (-1, 0),         (1, 0),   
-        (-1, 1), (0, 1), (1, 1)
-    ]
-    WIDTH, HEIGHT = 3
+    WIDTH, HEIGHT = 3, 3
     connect = Grid_Wrapper(width=WIDTH, height=HEIGHT)
 
     current_x_coordinate, current_y_coordinate = 0,0

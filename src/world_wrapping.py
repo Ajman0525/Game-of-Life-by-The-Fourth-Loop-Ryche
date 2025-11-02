@@ -17,4 +17,20 @@ class Grid_Wrapper:
             change_in_coordinate, 
             max_size
         )
-    
+    def find_all_neighbors(self, current_x, current_y):
+        neighbor_coordinates = []
+        NEIGHBOR_OFFSETS = [
+            (-1, -1),(0, -1),(1, -1), 
+            (-1, 0),         (1, 0),   
+            (-1, 1), (0, 1), (1, 1)
+        ]
+        for dx, dy in NEIGHBOR_OFFSETS:
+            # X uses is_x_axis=True
+            wrapped_x = self.world_wrap(current_x, dx, is_x_axis=True)
+            
+            # Y uses is_x_axis=False
+            wrapped_y = self.world_wrap(current_y, dy, is_x_axis=False) 
+            
+            neighbor_coordinates.append((wrapped_x, wrapped_y))
+            
+        return neighbor_coordinates
