@@ -82,14 +82,13 @@ def test_full_alive_grid_corner_has_eight_neighbors():
     assert count_alive_neighbors(grid, 0, 0) == 8
 
 
-def test_full_alive_grid_edge_has_five_neighbors():
-    """Top edge (0,1) should have 5 alive neighbors."""
+def test_full_alive_grid_edge_has_eight_neighbors():
     grid = [
         [1, 1, 1],
         [1, 1, 1],
         [1, 1, 1]
     ]
-    assert count_alive_neighbors(grid, 0, 1) == 5
+    assert count_alive_neighbors(grid, 0, 1) == 8
 
 
 def test_full_dead_grid_returns_zero_neighbors():
