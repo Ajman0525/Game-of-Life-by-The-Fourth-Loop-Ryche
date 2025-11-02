@@ -17,3 +17,4 @@ class Grid_Wrapper:
             change_in_coordinate, 
             max_size
         )
+    
