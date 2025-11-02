@@ -1,3 +1,5 @@
+from src.world_wrapping import Grid_Wrapper
+
 def is_in_bounds(grid, row, col):
     """
     Check if a given cell (row, col) is inside the grid boundaries.
