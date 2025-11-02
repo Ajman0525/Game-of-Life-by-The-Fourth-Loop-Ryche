@@ -6,4 +6,4 @@ def test_world_wrapping_from_start_to_end():
     current_coordinate = 0
     change_in_coordinate = -1
 
-    assert connect.world_wrap(current_coordinate, change_in_coordinate, DIMENSION_SIZE) == 9
+    assert connect.world_wrap(current_coordinate, change_in_coordinate, is_x_axis=True) == 9
