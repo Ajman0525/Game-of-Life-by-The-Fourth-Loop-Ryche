@@ -3,7 +3,7 @@ class Grid_Wrapper:
         self.grid_width = width
         self.grid_height = height
 
-    def world_wrap(self, current_coordinate,change_in_coordinate, total_cells):
+    def calculate_wrapped_index(self, current_coordinate,change_in_coordinate, total_cells):
         new_index_coordinate = current_coordinate + change_in_coordinate
         wrapped_coordinate = (new_index_coordinate % total_cells + total_cells) % total_cells
 
