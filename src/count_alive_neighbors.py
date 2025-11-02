@@ -1,5 +1,11 @@
 from src.world_wrapping import Grid_Wrapper
 
+NEIGHBOR_OFFSETS = [
+    (-1, -1), (0, -1), (1, -1), 
+    (-1, 0),           (1, 0),   
+    (-1, 1),  (0, 1),  (1, 1)     
+]
+
 def is_in_bounds(grid, row, col):
     """
     Check if a given cell (row, col) is inside the grid boundaries.
