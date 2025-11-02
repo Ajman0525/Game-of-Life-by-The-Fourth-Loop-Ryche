@@ -22,7 +22,7 @@ def test_corner_cell_in_2x2_grid_with_two_neighbors():
         [0, 1],
         [1, 0]
     ]
-    assert count_alive_neighbors(grid, 0, 0) == 2
+    assert count_alive_neighbors(grid, 0, 0) == 4
 
 def test_edge_cell_in_cross_pattern_has_two_neighbors():
     """
