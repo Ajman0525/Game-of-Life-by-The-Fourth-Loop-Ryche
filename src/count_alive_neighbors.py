@@ -7,16 +7,18 @@ NEIGHBOR_OFFSETS = [
 ]
 
 def count_alive_neighbors(grid, target_row, target_col):
-    if is_in_bounds(grid, target_row, target_col):
-        alive_neighbors = 0
-        # Loop over all possible neighbors (3x3 box around the target cell)
-        for current_row in range(target_row - 1, target_row + 2): # Range works from start inclusive to stop exclusive
-            for current_column in range(target_col - 1, target_col + 2):
-                if (current_row == target_row) and (current_column == target_col):
-                    continue  # Skip the target cell itself
-                else:
-                    if is_alive(grid, current_row, current_column):
-                        alive_neighbors += 1
-        return alive_neighbors
-    else:
-        return 0
+    rows = len(grid)
+    columns = len(grid[0]) if rows > 0 else 0
+
+    wrapper = Grid_Wrapper(width=columns, height=rows)
+    
+    alive_neighbors = 0
+
+    for offset_column, offset_row in NEIGHBOR_OFFSETS:
+        wrapped_row = wrapper.world_wrap(target_row, offset_row, is_x_axis=False) 
+        wrapped_column = wrapper.world_wrap(target_col, offset_column, is_x_axis=True)
+        
+        if grid[wrapped_row][wrapped_column] == 1:
+            alive_neighbors += 1
+
+    return alive_neighbors
