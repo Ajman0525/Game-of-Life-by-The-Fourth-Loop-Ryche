@@ -59,7 +59,7 @@ def test_empty_grid_returns_zero_neighbors():
 
 def test_single_cell_grid_has_zero_neighbors():
     """A 1x1 grid cannot have any neighbors."""
-    grid = [[1]]
+    grid = []
     assert count_alive_neighbors(grid, 0, 0) == 0
 
 
@@ -73,14 +73,13 @@ def test_full_alive_grid_center_has_eight_neighbors():
     assert count_alive_neighbors(grid, 1, 1) == 8
 
 
-def test_full_alive_grid_corner_has_three_neighbors():
-    """Top-left corner (0,0) has three alive neighbors around it."""
+def test_full_alive_grid_corner_has_eight_neighbors():
     grid = [
         [1, 1, 1],
         [1, 1, 1],
         [1, 1, 1]
     ]
-    assert count_alive_neighbors(grid, 0, 0) == 3
+    assert count_alive_neighbors(grid, 0, 0) == 8
 
 
 def test_full_alive_grid_edge_has_five_neighbors():

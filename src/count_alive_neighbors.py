@@ -10,6 +10,9 @@ def count_alive_neighbors(grid, target_row, target_col):
     rows = len(grid)
     columns = len(grid[0]) if rows > 0 else 0
 
+    if rows == 0:
+        return 0
+    
     wrapper = Grid_Wrapper(width=columns, height=rows)
     
     alive_neighbors = 0
