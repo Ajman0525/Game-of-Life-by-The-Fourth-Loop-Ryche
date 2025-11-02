@@ -29,30 +29,27 @@ def is_alive(grid, row, col):
     else:
         return False
 
-def count_alive_neighbors(grid, target_row, target_col):
-    """
-    Count the number of alive (1) neighboring cells around a given cell in a 2D grid.
+def count_alive_neighbors(grid, row, col):
+    """Count the number of alive (1) neighbors around a cell."""
+    if not grid or row < 0 or col < 0:
+        return 0
 
-    The grid does not wrap around edges — neighbors outside grid boundaries
-    are ignored (non-wrapping behavior).
-    Returns 0 if the target cell itself is out of bounds.
-    """
-    if is_in_bounds(grid, target_row, target_col):
-        alive_neighbors = 0
-        rows = len(grid)
-        cols = len(grid[0])
+    rows = len(grid)
+    cols = len(grid[0])
 
-        # Loop over all possible neighbors (3×3 box)
-        for current_row in range(target_row - 1, target_row + 2):
-            for current_column in range(target_col - 1, target_col + 2):
-                if current_row == target_row and current_column == target_col:
-                    continue  # Skip self
+    # Out of bounds safety check
+    if row >= rows or col >= cols:
+        return 0
 
-                # Wrap-around using modulo
-                wrapped_row = current_row % rows
-                wrapped_col = current_column % cols
+    count = 0
+    # Check all 8 directions
+    for i in range(-1, 2):     # -1, 0, +1
+        for j in range(-1, 2):
+            if i == 0 and j == 0:
+                continue  # skip the cell itself
+            r, c = row + i, col + j
+            if 0 <= r < rows and 0 <= c < cols:
+                count += grid[r][c]
+    return count
 
-                if grid[wrapped_row][wrapped_col] == 1:
-                    alive_neighbors += 1
-        return alive_neighbors
 

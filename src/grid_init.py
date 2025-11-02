@@ -1,12 +1,13 @@
-from read_text import File
-
-# Create file reader instance
-file_reader = File()
-
-# Example: read the input file
-grid, generation = file_reader.read_input_file("input.txt")
-
-# Initialize grid object
-from grid_init import Grid
-grid_obj = Grid(data=grid)
-
+class Grid:
+    def __init__(self, rows=10, cols=10, data=None):
+        if data is not None:
+            self.data = data
+            self.rows = len(data)
+            self.cols = len(data[0]) if self.rows > 0 else 0
+        else:
+            self.rows = rows
+            self.cols = cols
+            self.data = [[0] * cols for _ in range(rows)]
+    
+    def get_grid(self):
+        return self.data
