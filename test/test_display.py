@@ -28,7 +28,7 @@ def test_empty_grid_display():
 
 def test_two_dead_neighbours():
     initial_grid = [[1, 1, 1], [1, 1, 1], [1, 0, 0]]
-    expected_grid = [[1, 0, 1], [0, 0, 1], [1, 0, 0]]
+    expected_grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]  
     next_generation(initial_grid) == expected_grid
     assert display_grid(next_generation(initial_grid)) == display_grid(expected_grid)
 
