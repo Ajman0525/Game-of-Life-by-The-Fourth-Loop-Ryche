@@ -7,13 +7,6 @@ NEIGHBOR_OFFSETS = [
 ]
 
 def count_alive_neighbors(grid, target_row, target_col):
-    """
-    Count the number of alive (1) neighboring cells around a given cell in a 2D grid.
-
-    The grid does not wrap around edges — neighbors outside grid boundaries
-    are ignored (non-wrapping behavior).
-    Returns 0 if the target cell itself is out of bounds.
-    """
     if is_in_bounds(grid, target_row, target_col):
         alive_neighbors = 0
         # Loop over all possible neighbors (3x3 box around the target cell)
