@@ -54,7 +54,11 @@ def test_multiple_generations():
         [0, 0, 0]
     ]
     # Generation 3 → still static
-    expected = gen2
+    expected = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ]
 
     result = multiple_generation(grid, 3)
     assert result == expected
