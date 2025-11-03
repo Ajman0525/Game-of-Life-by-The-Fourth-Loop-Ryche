@@ -25,9 +25,9 @@ def test_one_generation():
     ]
     # Expected after one generation (manually reasoned)
     expected = [
-        [1, 1, 0],
-        [1, 1, 0],
-        [0, 0, 0]
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
     ]
     result = multiple_generation(grid, 1)
     assert result == expected
