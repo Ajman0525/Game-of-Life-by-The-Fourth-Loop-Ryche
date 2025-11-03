@@ -11,4 +11,3 @@ class Grid:
     
     def get_grid(self):
         return self.data
-
