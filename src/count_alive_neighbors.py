@@ -1,4 +1,4 @@
-from src.world_wrapping import Grid_Wrapper
+from world_wrapping import Grid_Wrapper
 
 NEIGHBOR_OFFSETS = [
     (-1, -1), (0, -1), (1, -1), 
