@@ -30,7 +30,7 @@ class File:
 
         population_lines = []
         generation_number = 0
-        blank_found = False  # Marks the blank line that separates grid and generation count
+        blank_found = False 
 
         for line in lines:
             if line.strip() == "" and not blank_found:

@@ -17,7 +17,6 @@ def test_survival():
         [0, 1, 0],
     ]
     new_grid = next_generation(grid)
-    # Middle cell should survive
     assert new_grid[1][1] == 1, "A live cell with 2 or 3 neighbors should survive."
 
 def test_overpopulation():
