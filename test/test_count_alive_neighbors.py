@@ -1,4 +1,4 @@
-import pytest
+import pytest # type: ignore
 from src.count_alive_neighbors import count_alive_neighbors
 
 def test_center_cell_in_3x3_grid_with_two_neighbors():

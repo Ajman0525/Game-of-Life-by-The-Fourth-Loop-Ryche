@@ -15,10 +15,7 @@ def get_grid_size():
         except ValueError:
             print("Please enter valid numbers")
             
-# Create initial grid with user-defined live cells
-# The input_func parameter allows for dependency injection of the input function for easier testing
 def create_initial_grid(rows, cols, input_func=input):
-    # Initialize grid using Grid class
     grid_obj = Grid(rows, cols)
     grid = grid_obj.get_grid()
     
@@ -55,10 +52,8 @@ def display_menu():
 def main():
     print("Welcome to Conway's Game of Life!")
     
-    # Get grid size from user
     rows, cols = get_grid_size()
     
-    # Get initial grid configuration
     initial_grid = create_initial_grid(rows, cols)
     current_grid = initial_grid
     
@@ -69,11 +64,9 @@ def main():
         choice = display_menu()
         
         if choice == '1':
-            # Show next generation
             current_grid = next_generation(current_grid)
             
         elif choice == '2':
-            # Run multiple generations
             try:
                 gens = int(input("How many generations? "))
                 if gens > 0:
@@ -87,11 +80,9 @@ def main():
                 print("Please enter a valid number")
         
         elif choice == '3':
-            # Reset grid
             current_grid = create_initial_grid(rows, cols)
         
         elif choice == '4':
-            #Exit Game
             print("Thanks for playing!")
             break
         
